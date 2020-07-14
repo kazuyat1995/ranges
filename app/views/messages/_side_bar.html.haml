@@ -2,13 +2,13 @@
   .side-header
     .side-header__box
       .side-header__box__menu-icon
-        =link_to "#" do
+        = link_to edit_user_path(current_user) do
           = icon("fas", "bars")
       .side-header__box__grop-name
         =link_to "#" do
           ="テックキャンプ"
         .side-header__box__group-name__user-name 
-          = "太郎"
+          = current_user.name
       .side-header__box__icons
         .side-header__box__icons__new-group
           = link_to "#" do
