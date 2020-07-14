@@ -1,0 +1,32 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group
+        ="カンガルー"
+      .main-header__left-box__member-list
+        =link_to "#" do
+          =icon("far", "user")
+        .main-header__left-box__member-list__member
+          
+        .main-header__left-box__member-list__choice
+          %input#check1{:type => "checkbox"}/
+          %label{:for => "check1"} 
+              
+        .main-header__left-box__member-list__caret-down
+          =link_to "#"do
+            =icon("fas", "caret-down")
+        .main-header__left-box__member-list__
+    .main-header__edit-btn
+      =link_to "Edit"
+  
+  .messages
+    = render "messages/message"
+
+  .form
+    %form.new_message
+      .input-box
+        %input{type:"text", class:"input-box__text",placeholder:"メッセージ入力してください"}
+        %label{class:"input-box__image"}
+          =icon("fas", "image")
+          %input{type:"file", class:"input-box__image__file"}
+      %input{type:"submit", class:"submit-btn"}

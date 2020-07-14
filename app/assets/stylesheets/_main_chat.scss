@@ -1,0 +1,197 @@
+.chat-main{
+  width: calc(100vw - 300px);
+  background-color: whitesmoke;
+  .main-header{
+    height: 100px;
+    border-bottom: solid 1px #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    overflow: scroll;
+    &__left-box{
+      margin-top: 35px;
+      &__current-group{
+        font-size: 20px;
+        color: #333333;
+        margin-bottom: 5px;
+        display: flex;
+      }
+      &__member-list{
+        display: flex;
+        font-size: 12px;
+        
+        &__member{
+          margin-left: 5px;
+          margin-right: 10px;
+        }
+        &__choice{
+          input[type="checkbox"] {
+            display: none;
+            /*デフォルトのチェックボックスを非表示にする*/
+          }
+          input#check1[type="checkbox"]+label {
+            position: relative;
+            padding-left: 15px;
+            /*チェックボックス分の隙間を作る*/
+          }
+          input#check1[type="checkbox"]+label::before {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            /*中央ぞろえにする*/
+            border: 1px solid blue;
+            /*お好きなや太さで。*/
+            border-radius: 3px;
+            cursor: pointer;
+            /*ポインターを表示する*/
+          }
+          // input#check1[type="checkbox"]:checked+label::before{
+          //   /*チェックしたときの箱の色を変える*/
+          //   background: cornflowerblue;
+          // }
+          input#checkbox[type=checkbox]:checked+label::after{
+            /*チェックの✓をつくる*/
+            content: "";
+            display: block;
+            width: 10px;
+            height: 6px;
+            box-sizing: border-box;
+            border-bottom: 2px solid #fff;
+            border-left: 2px solid #fff;
+            position: absolute;
+            /*ここから下は位置を調整する*/
+            top: 40%;
+            left: 5px;
+            /*箱を斜めに傾けてチェック表示にする*/
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg) translateY(-50%);
+          }
+
+
+          a{
+            display: inline-flex;
+            color: #333333;
+            font-size: 18px;
+            text-decoration: none;
+          }
+        }
+        &__caret-down{
+          margin: -2px 0 0 7px;
+          a{
+            text-decoration: none;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    &__edit-btn{
+      font-size: 16px;
+      padding: 0 20px;
+      height: 40px;
+      line-height: 40px;
+      border: solid 1px #38aef0;
+      margin-top: 28px;
+      position: absolute;
+      right: 40px;
+      a{
+        color: #38aef0;
+        text-decoration: none;
+      }
+    }
+  }
+  .messages{
+    background-color: #fafafa;
+    height: calc(100vh - 190px);
+    overflow: scroll;
+    padding: 35px 40px 46px;
+    display: flex;
+    position: relative;
+
+    .message{
+      padding-bottom: 40px;
+      width: 100%;
+      &__checkbox{
+        display: flex;
+        position: absolute;
+        top: 35px;
+        left: 20px;
+        &-input{
+          display: none;
+        }
+        &-parts{
+          padding-left: 20px;
+          position: relative;
+          margin-right: 20px;
+        }
+      }
+      &__upper-info{
+        margin-bottom: 10px;
+        display: flex;
+        &__talker{
+          font-size: 16px;
+          color: #333333;
+          font-weight: bold
+        }
+        &__date{
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__text{
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 46px;
+      }
+    }
+  }
+
+  .form{
+    background-color: #d2d2d2;
+    height: 90px;
+    padding: 20px 40px;
+    
+    form{
+      display: flex;
+
+      .input-box{
+        position: relative;
+        width: 100%;
+        &__text{
+          height: 50px;
+          width: 100%;
+          color: #434A54;
+          border-style: none;
+          padding: 0 40px 0 10px;
+        }
+        &__image{
+          cursor: pointer;
+          position: absolute;
+          top:10px;
+          right: 10px;
+          font-size: 20px;
+          a{
+            color: white;
+          }
+          &__file{
+            display: none;
+          }
+        }
+      }
+      .submit-btn{
+        width: 100px;
+        margin-left: 15px;
+        padding: 0 30px;
+        background-color: #38aef0;
+        height: 50px;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
