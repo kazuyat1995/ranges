@@ -17,7 +17,7 @@
             =icon("fas", "caret-down")
         .main-header__left-box__member-list__
     .main-header__edit-btn
-      =link_to "Edit"
+      =link_to "Edit",edit_group_path(@group), class: "edit_btn"
   
   .messages
     = render "messages/message"
