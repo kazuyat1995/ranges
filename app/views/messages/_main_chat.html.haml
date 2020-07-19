@@ -2,31 +2,36 @@
   .main-header
     .main-header__left-box
       .main-header__left-box__current-group
-        ="カンガルー"
+        = @group.name
       .main-header__left-box__member-list
-        =link_to "#" do
+        =link_to "&__member" do
           =icon("far", "user")
         .main-header__left-box__member-list__member
-          
-        .main-header__left-box__member-list__choice
-          %input#check1{:type => "checkbox"}/
-          %label{:for => "check1"} 
+          - @group.users.each do |user|
+            = user.name
               
-        .main-header__left-box__member-list__caret-down
+        .main-header__left-box__member-list__caret-down1
           =link_to "#"do
-            =icon("fas", "caret-down")
-        .main-header__left-box__member-list__
+            %form{:action => "選択", :method => "post"}
+              %p
+                %select{:name => "example1"}
+                  %option{:value => "サンプル1"} 選択してください
+                  %option{:value => "サンプル2"} 選択解除
+              %p
+        .main-header__left-box__member-list__caret-down2
+          =link_to "#" do
+            %input{:type => "submit", :value => "移動"}/
     .main-header__edit-btn
       =link_to "Edit",edit_group_path(@group), class: "edit_btn"
   
   .messages
-    = render "messages/message"
+    = render @messages
 
   .form
-    %form.new_message
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{type:"text", class:"input-box__text",placeholder:"メッセージ入力してください"}
-        %label{class:"input-box__image"}
+        = f.text_field :content, class:"input-box__text",placeholder:"メッセージ入力してください"
+        = f.label :image, class: "input-box__image" do
           =icon("fas", "image")
-          %input{type:"file", class:"input-box__image__file"}
-      %input{type:"submit", class:"submit-btn"}
+          = f.file_field :image, class:"input-box__image__file"
+      = f.submit "送信", class:"submit-btn"
