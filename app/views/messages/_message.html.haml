@@ -1,4 +1,4 @@
-.message
+.message{data: {message: {id: message.id}}}
   .message__checkbox
     %label
       %input.checkbox-input{:name => "checkbox[]", :type => "checkbox"}/
@@ -6,9 +6,11 @@
     %br/
   .message__upper-info
     .message__upper-info__talker
-      ="太郎"
+      = message.user.name
     .message__upper-info__date
-      ="2020年07月14日　01時50分"
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .message__text
-    %p.message__text__content
-      ="よろしく"
+    - if message.content.present?
+      %p.message__text__content
+        = message.content
+    = image_tag message.image.url, class: 'message__text__image' if message.image.present?

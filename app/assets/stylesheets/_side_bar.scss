@@ -8,27 +8,17 @@
     display: flex;
     align-items: center;
     padding: 0 20px;
-    &__box{
+    &__box {
       width: 100%;
-      font-size: 18px;
+      font-size: 16px;
       display: flex;
       justify-content: space-between;
-      &__menu-icon{
-        color: white;
-        list-style: none;
-        a{
-          color: white;
-          text-decoration: none;
-        }
-      }
-      &__group-name{
-        &__user-name{
-          font-size: 12px;
-          margin: 0;
-          padding: 0;
-        }
+      &__user-name{
+        margin: 0;
+        padding: 0;
       }
       &__icons{
+        width: 60px;
         display: flex;
         color: white;
         list-style: none;
@@ -38,7 +28,7 @@
           padding: 5px;
         }
       }
-    }
+    } 
   }
   .groups{
     background-color: #2f3e51;

@@ -24,68 +24,16 @@
           margin-left: 5px;
           margin-right: 10px;
         }
-        &__choice{
-          input[type="checkbox"] {
-            display: none;
-            /*デフォルトのチェックボックスを非表示にする*/
-          }
-          input#check1[type="checkbox"]+label {
-            position: relative;
-            padding-left: 15px;
-            /*チェックボックス分の隙間を作る*/
-          }
-          input#check1[type="checkbox"]+label::before {
-            content: "";
-            display: block;
-            width: 12px;
-            height: 12px;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            /*中央ぞろえにする*/
-            border: 1px solid blue;
-            /*お好きなや太さで。*/
-            border-radius: 3px;
-            cursor: pointer;
-            /*ポインターを表示する*/
-          }
-          // input#check1[type="checkbox"]:checked+label::before{
-          //   /*チェックしたときの箱の色を変える*/
-          //   background: cornflowerblue;
-          // }
-          input#checkbox[type=checkbox]:checked+label::after{
-            /*チェックの✓をつくる*/
-            content: "";
-            display: block;
-            width: 10px;
-            height: 6px;
-            box-sizing: border-box;
-            border-bottom: 2px solid #fff;
-            border-left: 2px solid #fff;
-            position: absolute;
-            /*ここから下は位置を調整する*/
-            top: 40%;
-            left: 5px;
-            /*箱を斜めに傾けてチェック表示にする*/
-            -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg) translateY(-50%);
-          }
-
-
-          a{
-            display: inline-flex;
-            color: #333333;
-            font-size: 18px;
-            text-decoration: none;
-          }
-        }
-        &__caret-down{
+        &__caret-down1{
           margin: -2px 0 0 7px;
           a{
+            display: flex;
             text-decoration: none;
             font-size: 15px;
           }
+        }
+        &__caret-down2{
+          margin-left: 5px;
         }
       }
     }
@@ -104,17 +52,18 @@
       }
     }
   }
+  
   .messages{
     background-color: #fafafa;
     height: calc(100vh - 190px);
     overflow: scroll;
     padding: 35px 40px 46px;
-    display: flex;
-    position: relative;
 
     .message{
       padding-bottom: 40px;
       width: 100%;
+      display: flex;
+      position: relative;
       &__checkbox{
         display: flex;
         position: absolute;
@@ -130,9 +79,10 @@
         }
       }
       &__upper-info{
-        margin-bottom: 10px;
+        margin-bottom: 500px;
         display: flex;
         &__talker{
+
           font-size: 16px;
           color: #333333;
           font-weight: bold
@@ -144,11 +94,15 @@
         }
       }
       &__text{
+        position: absolute;
+        top: 57px;
+        left: 40px;
         color: #434A54;
         font-size: 14px;
         margin-bottom: 46px;
       }
     }
+    
   }
 
   .form{
