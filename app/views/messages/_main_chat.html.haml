@@ -4,23 +4,29 @@
       .main-header__left-box__current-group
         = @group.name
       .main-header__left-box__member-list
-        =link_to "&__member" do
+        =link_to "#" do
           =icon("far", "user")
         .main-header__left-box__member-list__member
           - @group.users.each do |user|
-            = user.name
+            =user.name
+
+            
               
         .main-header__left-box__member-list__caret-down1
-          =link_to "#"do
-            %form{:action => "選択", :method => "post"}
-              %p
-                %select{:name => "example1"}
-                  %option{:value => "サンプル1"} 選択してください
-                  %option{:value => "サンプル2"} 選択解除
-              %p
-        .main-header__left-box__member-list__caret-down2
           =link_to "#" do
-            %input{:type => "submit", :value => "移動"}/
+            %form{:action => "#", :method => "POST"}
+              %p
+                %select{:name => "type", :type => "checkbox"}
+                  %option{:value => "サンプル1"} 選択してください
+                  %option{:value => "ALL"}全部選択
+                  %option{:value => "サンプル2"} 選択解除
+
+                =link_to "#" do
+                  %input{:type => "submit", :value => "移動"}/
+              %p
+        -# .main-header__left-box__member-list__caret-down2
+        -#   =link_to "#" do
+        -#     %input{:type => "submit", :value => "移動"}/
     .main-header__edit-btn
       =link_to "Edit",edit_group_path(@group), class: "edit_btn"
   
@@ -29,9 +35,10 @@
 
   .form
     = form_for [@group, @message] do |f|
-      .input-box
-        = f.text_field :content, class:"input-box__text",placeholder:"メッセージ入力してください"
-        = f.label :image, class: "input-box__image" do
-          =icon("fas", "image")
-          = f.file_field :image, class:"input-box__image__file"
-      = f.submit "送信", class:"submit-btn"
+      .form__input
+        = f.text_field :content, class: 'form__input--text', placeholder: 'メッセージを入力してください'
+        .input-box
+          = f.label :image, class: 'input-box__image' do
+            = icon('far', 'image', class: 'icon')
+            = f.file_field :image, class: 'input-box__image__file'
+        = f.submit '送信', class: 'submit-btn'

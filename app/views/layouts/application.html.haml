@@ -4,8 +4,11 @@
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title Ranges
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    -# CSSやJavaScriptをRailsアプリ全体に反映させる大切な記述。以下
+    -# = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
   %body
     = render 'layouts/notifications'
     = yield
