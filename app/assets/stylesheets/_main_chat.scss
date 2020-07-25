@@ -1,9 +1,10 @@
 .chat-main{
   width: calc(100vw - 300px);
-  background-color: whitesmoke;
+  background: linear-gradient(#9ad4fc, #dcffb8);
+  // border-bottom: 1px solid;
   .main-header{
     height: 100px;
-    border-bottom: solid 1px #eeeeee;
+    border-bottom: solid 1px #9ad4fc;
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
@@ -19,22 +20,39 @@
       &__member-list{
         display: flex;
         font-size: 12px;
-        
         &__member{
           margin-left: 5px;
           margin-right: 10px;
         }
+        
         &__caret-down1{
           margin: -2px 0 0 7px;
-          a{
+          p{
             display: flex;
             text-decoration: none;
             font-size: 15px;
+            select{
+              height: 23px;
+            }
+            // input{
+            //   height: 20px;
+            //   margin-left: 5px;
+            // }
+            a{
+              height: 23px;
+              margin-left: 5px;
+            }
           }
+          input[type="submit"]{
+            height: 23px;
+          }
+
         }
-        &__caret-down2{
-          margin-left: 5px;
-        }
+        // &__caret-down2{
+        //   height: 23px;
+        //   margin-left: 5px;
+          
+        // }
       }
     }
     &__edit-btn{
@@ -42,10 +60,11 @@
       padding: 0 20px;
       height: 40px;
       line-height: 40px;
-      border: solid 1px #38aef0;
+      border: solid 1px black;
       margin-top: 28px;
       position: absolute;
       right: 40px;
+      border-radius: 7px 7px;
       a{
         color: #38aef0;
         text-decoration: none;
@@ -54,14 +73,13 @@
   }
   
   .messages{
-    background-color: #fafafa;
     height: calc(100vh - 190px);
     overflow: scroll;
     padding: 35px 40px 46px;
 
     .message{
       padding-bottom: 40px;
-      width: 100%;
+      // width: 100%;
       display: flex;
       position: relative;
       &__checkbox{
@@ -82,7 +100,6 @@
         margin-bottom: 500px;
         display: flex;
         &__talker{
-
           font-size: 16px;
           color: #333333;
           font-weight: bold
@@ -100,31 +117,74 @@
         color: #434A54;
         font-size: 14px;
         margin-bottom: 46px;
+        &__image{
+          border-radius: 5%;
+        }
       }
     }
-    
+    .message{
+      padding-bottom: 40px;
+      // width: 100%;
+      display: flex;
+      position: relative;
+      &__checkbox{
+        display: flex;
+        position: absolute;
+        top: 35px;
+        left: 20px;
+        &-input{
+          display: none;
+        }
+        &-parts{
+          padding-left: 20px;
+          position: relative;
+          margin-right: 20px;
+        }
+      }
+      &__upper-info{
+        margin-bottom: 500px;
+        display: flex;
+        &__talker{
+          font-size: 16px;
+          color: #333333;
+          font-weight: bold
+        }
+        &__date{
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__text{
+        position: absolute;
+        top: 57px;
+        left: 40px;
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 46px;
+        &__image{
+          border-radius: 5%;
+        }
+      }
+    }
   }
 
   .form{
-    background-color: #d2d2d2;
     height: 90px;
     padding: 20px 40px;
     
-    form{
+    &__input{
       display: flex;
-
+      &--text{
+        height: 50px;
+        padding: 0 40px 0 10px;
+        border-style: none;
+        width: 100%;
+        border-radius: 15px 15px;
+      }
       .input-box{
         position: relative;
-        width: 100%;
-        &__text{
-          height: 50px;
-          width: 100%;
-          color: #434A54;
-          border-style: none;
-          padding: 0 40px 0 10px;
-        }
         &__image{
-          cursor: pointer;
           position: absolute;
           top:10px;
           right: 10px;
@@ -138,9 +198,9 @@
         }
       }
       .submit-btn{
+        border-radius: 15px 15px;
         width: 100px;
         margin-left: 15px;
-        padding: 0 30px;
         background-color: #38aef0;
         height: 50px;
         color: white;

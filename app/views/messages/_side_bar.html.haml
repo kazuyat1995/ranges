@@ -12,6 +12,8 @@
             = icon("fas", "cog")
   
   .groups
+    .caption
+      = "グループ一覧"
     - current_user.groups.each do |group|
       .group
         = link_to group_messages_path(group) do

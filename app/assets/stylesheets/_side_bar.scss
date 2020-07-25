@@ -36,6 +36,14 @@
     padding: 20px 20px 0;
     overflow: scroll;
     font-weight: 20px;
+    border-collapse: collapse;
+    
+    .caption{
+      font-size: 10px;
+      // opacity: 0.5;
+      text-align: center;
+      font-weight: bold;
+    }
     .group{
       margin-bottom: 40px;
       a{
@@ -47,7 +55,11 @@
         margin-bottom: 5px;
       }
       &__group-message{
+        opacity: 0.5;
         font-size: 11px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
     }
   }
