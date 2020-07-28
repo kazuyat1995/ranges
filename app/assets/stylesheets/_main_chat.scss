@@ -15,7 +15,6 @@
         font-size: 20px;
         color: #333333;
         margin-bottom: 5px;
-        display: flex;
       }
       &__member-list{
         display: flex;
@@ -111,14 +110,15 @@
         }
       }
       &__text{
-        position: absolute;
-        top: 57px;
-        left: 40px;
+        // position: absolute;
+        // top: 57px;
+        // left: 40px;
         color: #434A54;
         font-size: 14px;
         margin-bottom: 46px;
         &__image{
           border-radius: 5%;
+          margin-bottom: 500px;
         }
       }
     }
