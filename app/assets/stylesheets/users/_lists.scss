@@ -1,0 +1,23 @@
+.users-lists{
+  width: auto;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: coral;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  &__list{
+    &__field--left{
+      label{
+        font-weight: bold;
+        
+      }
+    }
+    &__field--right{
+      p{
+        
+      }
+    }
+  }
+}

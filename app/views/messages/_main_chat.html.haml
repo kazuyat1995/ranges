@@ -4,13 +4,7 @@
       .main-header__left-box__current-group
         = @group.name
       .main-header__left-box__member-list
-        =link_to "#" do
-          =icon("far", "user")
-        .main-header__left-box__member-list__member
-          - @group.users.each do |user|
-            =user.name
-
-            
+        = render partial: 'list'
               
         .main-header__left-box__member-list__caret-down1
           =link_to "#" do
@@ -28,7 +22,7 @@
         -#   =link_to "#" do
         -#     %input{:type => "submit", :value => "移動"}/
     .main-header__edit-btn
-      =link_to "Edit",edit_group_path(@group), class: "edit_btn"
+      =link_to "編集",edit_group_path(@group), class: "edit_btn"
   
   .messages
     = render @messages

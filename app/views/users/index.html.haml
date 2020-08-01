@@ -1,0 +1,20 @@
+-# .users-lists
+-#   .users-lists__list
+-#     %link(rel="stylesheet" href="users/_lists.scss")
+-#     = "グループメンバー 一覧"
+-#   .users-lists.clearfix.chat-member
+-#     %p.users-lists-user__name= current_user.name
+
+.users-lists
+  .users-lists__list
+    .users-lists__list__field.clearfix
+      .users-lists__list__field--left
+        %label.users-lists__list__label{:for => "chat_group_チャットメンバー"} チャットメンバー
+      .users-lists__list__field--right
+        #users-lists-users.js-add-user
+          .users-lists-user.clearfix.js-chat-member
+            %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
+            %p.users-lists-user__name= current_user.name
+            ="平和"
+
+
